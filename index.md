@@ -1,9 +1,8 @@
 ---
-title: Stackwork. Make your stack work.
+title: Stackwork
+subtitle: Make your stack work
+layout: default
 ---
-# Stackwork
-
-**Make your stack work.**
 Full stack application testing with Docker, Docker Compose and Gradle.
 
 Stackwork allows you to integrate Docker into your project.
