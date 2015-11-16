@@ -45,5 +45,5 @@ The plugin executes commands to the Docker CLI and Docker Compose, meaning those
 It also means out of the box support for the Linux socket, and any tweaking such as an --insecure-registry will be used automatically.
 
 ## Documentation, source code and contributions
-At the Github project page: [stackwork][http://github.com/Krijger/docker-gradle].
+At the Github project page: [stackwork](http://github.com/Krijger/docker-gradle).
 And yes, that name is Docker Gradle instead of Stackwork. We're branding now :)
