@@ -1,3 +1,6 @@
+---
+title: Stackwork. Make your stack work.
+---
 # Stackwork
 
 **Make your stack work.**
