@@ -57,14 +57,18 @@ header {
     color: #888;
 }
 
-a, a:active, a:hover, a:visited {
-    color: #666;
-    font-weight: bold;
-    text-decoration: none;
-}
-
 a.sitemap-link, a.sitemap-link:active, a.sitemap-link:hover, a.sitemap-link:visited {
     color: #444;
     font-weight: normal;
+    text-decoration: none;
+}
+
+
+
+h2 { margin-top: 2em; }
+
+a, a:active, a:hover, a:visited {
+    color: #666;
+    font-weight: bold;
     text-decoration: none;
 }

@@ -45,7 +45,7 @@ stackwork {
 
 dependencies {
   // stackwork dependencies are supplied to the Dockerfile
-  stackwork group: 'org.stackwork.gradle', name: 'name', version: '0.1', ext: 'tar.gz'
+  stackwork group: 'org.stackwork', name: 'name', version: '0.1', ext: 'tar.gz'
 }
 ~~~
 
