@@ -2,6 +2,80 @@
 title: Reference
 layout: default
 ---
-TODO: make a complete reference of everything configurable.
-- build.gradle
-- module types (including explanation on importing them in the settings file)
+
+## settings.gradle
+Stackwork utilizes Gradle's [multiproject ](https://docs.gradle.org/current/userguide/multi_project_builds.html) feature.
+Stackwork modules are defined as Gradle subprojects. Your project should contain a `settings.gradle` in which all
+modules are imported. For instance, a project with subprojects `module-1` and `module-2` has a project directory containing the
+subdirectories `module-1` and `module-2` and a settings file:
+
+~~~ groovy
+// settings.gradle
+include 'module1', 'module-2'
+~~~
+
+## build.gradle
+The project and all subprojects that function as a Stackwork module should contain a `build.gradle` file applying the Stackwork plugin.
+T
+
+~~~ groovy
+// build.gradle
+
+// only in the main project
+plugins {
+  id 'org.stackwork' version '0.6.0-rc.6'
+}
+
+// only needed in stackwork modules, since the main project already has the plugin statement
+apply plugin: 'stackwork'
+
+stackwork {
+  // unlike other types, default does not activate any functionality
+  moduleType = DEFAULT
+  
+  // name for published image
+  imageName = 'image-name'
+  
+  // if an image built in this module depends on one built in another 
+  baseImageProject = (project)
+  
+  // a module can share another module's compose file
+  composeProject = (project)
+}
+
+dependencies {
+  // stackwork dependencies are supplied to the Dockerfile
+  stackwork group: 'org.stackwork.gradle', name: 'name', version: '0.1', ext: 'tar.gz'
+}
+~~~
+
+## Module Types
+
+### DEFAULT
+No functionality. This is the default module type (duh).
+
+### TEST
+Test module. Runs Java (or Groovy or Scala) tests against the Docker Compose setup. Does not build an image.
+
+Is assumed to have applied the [JavaPlugin](https://docs.gradle.org/current/userguide/java_plugin.html).
+The test task JVM will be enriched with runtime information for the services defined in the Docker Compose setup.
+
+### TEST_IMAGE
+Test image module. Builds a test image, and runs that against the Docker Compose setup.
+
+### IMAGE
+Image module. Any image needed in other modules docker compose setups can be created in an image module.
+
+### DELIVERABLE_IMAGE
+Image module for a deliverable image. For a deliverable image, tag and push tasks are created.
+
+Often, the root project has this type, building the image under test.
+
+Multiple modules can have this type, allowing to push multiple image in the same build job.
+
+### COMPOSE
+A Docker Compose module that supplies a Docker Compose stack definition.
+
+The root project may be of this type, which makes sense if the Docker Compose file itself is the deliverable that you would like to test.
+
+Any module can be of this type to supply the docker compose setup to multiple other modules.
