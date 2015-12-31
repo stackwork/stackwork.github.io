@@ -15,19 +15,20 @@ include 'module1', 'module-2'
 ~~~
 
 ## build.gradle
-The project and all subprojects that function as a Stackwork module should contain a `build.gradle` file applying the Stackwork plugin.
-T
+The project and all subprojects that function as Stackwork modules should contain a `build.gradle` file applying the Stackwork plugin.
 
 ~~~ groovy
 // build.gradle
 
-// only in the main project
+// in the main project. Not needed in subprojects
 plugins {
   id 'org.stackwork' version '0.6.0-rc.6'
 }
 
-// only needed in stackwork modules, since the main project already has the plugin statement
+// in subprojects. Not needed in the main project
 apply plugin: 'stackwork'
+
+version = '1.0'
 
 stackwork {
   // unlike other types, default does not activate any functionality
@@ -35,6 +36,9 @@ stackwork {
   
   // name for published image
   imageName = 'image-name'
+  // the name can also include a namespace and repository
+  imageName = 'stackwork/image-name'
+  imageName = 'https://repo.stackwork.org:1337/stackwork/image-name'
   
   // if an image built in this module depends on one built in another 
   baseImageProject = (project)
