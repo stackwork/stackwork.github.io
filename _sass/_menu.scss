@@ -1,3 +1,5 @@
+@import 'colorscheme';
+
 $menu-width: 150px;
 
 /* Add transition to containers so they can push in and out. */
@@ -32,15 +34,11 @@ $menu-width: 150px;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #ddd;
+    background: $bgr-emph-color;
+    border-right: solid 1px;
+    border-color: $bgr-emph-border-color;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-
-    a {
-        color: #666;
-        border: none;
-        padding: 0.6em 0 0.6em 0.6em;
-    }
 
     /* Remove all background/borders, since we are applying them to #menu. */
     .pure-menu,
@@ -55,29 +53,29 @@ $menu-width: 150px;
         border-top: 1px solid #333;
     }
 
-    .pure-menu li a:hover,
-    .pure-menu li a:focus {
-        background: #555;
-        color: #eee;
+    .pure-menu a:hover,
+    .pure-menu a:focus {
+        background: #777;
+        color: white;
+        &.pure-menu-selected {
+            background: $menu-selected-bgr-color;
+        }
     }
 
-    .pure-menu-selected,
-    .pure-menu-heading {
+    .pure-menu-selected {
+        background: $menu-selected-bgr-color;
+        color: $menu-selected-color;
+    }
+
+    /* .pure-menu-heading {
         background: #1f8dd6;
-    }
-
-    .pure-menu-selected a {
-        color: #fff;
-    }
-
-    .pure-menu-heading {
         font-size: 110%;
         line-height: 1.4em;
         color: #fff;
         margin: 0;
         white-space: normal;
         padding: 0.3em 0 0.3em 0.6em;
-    }
+    } */
 }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/

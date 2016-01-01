@@ -1,11 +1,10 @@
+@import 'colorscheme';
+
 .highlighter-rouge {
 
-  $comment-color: #008A25;
-  $string-color: #005AD2;
-
   pre {
-    background-color: #f0f0f0;
-    border: 1px solid $comment-color;
+    background-color: $bgr-emph-color;
+    border: 1px solid $bgr-emph-border-color;
     border-radius: 0.7em;
     color: #444;
     padding: 0.7em;
