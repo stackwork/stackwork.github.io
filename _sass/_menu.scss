@@ -48,7 +48,6 @@ $menu-width: 150px;
     }
 
     /* Add that light border to separate items into groups. */
-    .pure-menu ul,
     .pure-menu .menu-item-divided {
         border-top: 1px solid #333;
     }
@@ -57,12 +56,9 @@ $menu-width: 150px;
     .pure-menu a:focus {
         background: #777;
         color: white;
-        &.pure-menu-selected {
-            background: $menu-selected-bgr-color;
-        }
     }
 
-    .pure-menu-selected {
+    .pure-menu-selected .pure-menu-link {
         background: $menu-selected-bgr-color;
         color: $menu-selected-color;
     }

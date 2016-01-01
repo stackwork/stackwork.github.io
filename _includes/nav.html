@@ -1,8 +1,8 @@
 <nav class="pure-menu">
   <ul class="pure-menu-list">
     {% for navitem in site.data.nav %}
-    <li class="pure-menu-item">
-      <a class="pure-menu-link {% if page.url == navitem.href %}pure-menu-selected{% endif %}" href="{{navitem.href}}">{{navitem.title}}</a>
+    <li class="pure-menu-item {% if page.url == navitem.href %}pure-menu-selected{% endif %}">
+      <a class="pure-menu-link" href="{{navitem.href}}">{{navitem.title}}</a>
     </li>
     {% endfor %}
   </ul>
