@@ -40,30 +40,46 @@ $menu-width: 150px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    /* Remove all background/borders, since we are applying them to #menu. */
-    .pure-menu,
-    .pure-menu ul {
-        border: none;
-        background: transparent;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li a,
+        li p {
+            display: block;
+            margin: 0;
+            padding: 1em;
+        }
+        li a:hover,
+        li a:focus {
+            background: #777;
+            color: white;
+        }
+
+        li.sw-menu-selected > a {
+            background: $menu-selected-bgr-color;
+            color: $menu-selected-color;
+        }
+        li.sw-menu-has-children {
+            > a, > p {
+                padding-left: 2em;
+            }
+            > a:before,
+            > p:before {
+                color: $menu-selected-bgr-color;
+                content: "\25BE";
+                font-size: small;
+                position: absolute;
+                left: 1em;
+            }
+        }
+        ul > li {
+            margin-left: 1em;
+            border-left: 1px solid green;
+        }
     }
 
-    /* Add that light border to separate items into groups. */
-    .pure-menu .menu-item-divided {
-        border-top: 1px solid #333;
-    }
-
-    .pure-menu a:hover,
-    .pure-menu a:focus {
-        background: #777;
-        color: white;
-    }
-
-    .pure-menu-selected .pure-menu-link {
-        background: $menu-selected-bgr-color;
-        color: $menu-selected-color;
-    }
-
-    /* .pure-menu-heading {
+    /* .sw-menu-heading {
         background: #1f8dd6;
         font-size: 110%;
         line-height: 1.4em;

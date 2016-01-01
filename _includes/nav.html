@@ -1,9 +1,25 @@
-<nav class="pure-menu">
-  <ul class="pure-menu-list">
+<nav id="menu" class="sw-menu">
+  <ul class="sw-menu-list">
     {% for navitem in site.data.nav %}
-    <li class="pure-menu-item {% if page.url == navitem.href %}pure-menu-selected{% endif %}">
-      <a class="pure-menu-link" href="{{navitem.href}}">{{navitem.title}}</a>
-    </li>
+      {% assign navitemClass = '' %}
+      {% if page.url == navitem.url %}{% assign navitemClass = navitemClass | append: ' sw-menu-selected' %}{% endif %}
+      {% if navitem.pages %}{% assign navitemClass = navitemClass | append: ' sw-menu-has-children' %}{% endif %}
+      <li {% if navitemClass.size > 0 %}class="{{navitemClass}}"{% endif %}>
+        {% if navitem.url %}
+        <a href="{{navitem.url}}">{{navitem.title}}</a>
+        {% else %}
+        <p>{{navitem.title}}</p>
+        {% endif %}
+        {% if navitem.pages %}
+        <ul>
+          {% for subitem in navitem.pages %}
+          <li class="{% if page.url == subitem.url %}sw-menu-selected{% endif %}">
+            <a href="{{subitem.url}}">{{subitem.title}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
     {% endfor %}
   </ul>
 </nav>

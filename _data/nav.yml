@@ -1,12 +1,23 @@
 - title: Stackwork
-  href: /
+  url: /
 
 - title: Usage
-  href: /usage/
+  pages:
+  - title: Build & publish
+    url: /usage/build-publish/
 
 - title: Reference
-  href: /reference/
+#  url: /reference/
+  pages:
+  - title: Settings file
+    url: /reference/settings-file/
+  - title: Build file
+    url: /reference/build-file/
+  - title: Module Types
+    url: /reference/module-types/
+  - title: Tasks
+    url: /reference/gradle-tasks/
 
 - title: Links
-  href: /links/
+  url: /links/
 

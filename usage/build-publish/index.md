@@ -1,5 +1,5 @@
 ---
-title: Usage
+title: Build, tag & publish
 layout: default
 ---
 ## Building and publishing an image
