@@ -83,3 +83,11 @@ A Docker Compose module that supplies a Docker Compose stack definition.
 The root project may be of this type, which makes sense if the Docker Compose file itself is the deliverable that you would like to test.
 
 Any module can be of this type to supply the docker compose setup to multiple other modules.
+
+## Gradle tasks
+
+### buildImage
+
+### tagImage
+
+### pushImage
