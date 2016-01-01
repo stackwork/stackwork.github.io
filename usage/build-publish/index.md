@@ -17,6 +17,7 @@ stackwork {
 ~~~
 
 The Gradle tasks of interest are:
+
 - buildImage
 - tagImage
 - pushImage
