@@ -2,7 +2,6 @@
 title: Build, tag & publish
 layout: default
 ---
-## Building and publishing an image
 Stackwork can be used as an opinionated *convention over configuration* plugin to build images using Gradle.
 Specify that your project delivers a Docker image in the `build.gradle`:
 
