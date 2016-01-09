@@ -39,4 +39,4 @@ dependencies {
 }
 ~~~
 
-See the [module type reference](/reference/module-types/) for possible values for `moduleType`.
+See the [module reference](/reference/modules/) for possible values for `moduleType`.
