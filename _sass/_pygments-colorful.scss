@@ -2,11 +2,12 @@
 
 .highlighter-rouge {
 
+  color: #0D3819;
+
   pre {
     background-color: $bgr-emph-color;
     border: 1px solid $bgr-emph-border-color;
     border-radius: 0.7em;
-    color: #444;
     padding: 0.7em;
     white-space: pre-wrap;
   }
