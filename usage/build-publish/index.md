@@ -17,7 +17,7 @@ stackwork {
 }
 ~~~
 
-The Gradle tasks of interest are:
+The [Gradle tasks](/reference/gradle-tasks/) of interest are:
 
 - buildImage
 - tagImage
@@ -27,15 +27,33 @@ These tasks are logically dependent, so `gradle pushImage` will run all three. S
 
 The `imageName` will be tagged with the `version`. Our own practice is to use the 
 [nebula release plugin](https://github.com/nebula-plugins/nebula-release-plugin) to generate the version automatically.
-To be able to push images you will need to include a name space in the image name (resulting in a push to the
-[Docker Hub](https://hub.docker.com/). To use your own repository, include that in the image name as well.
+To push images to the [Docker Hub](https://hub.docker.com/), you need to include a name space in the image name. 
+To push to your own repository, you add the domain as in the example.
+Under the hood, a `docker push` is executed, so you can follow the rules you know.
+
+## Use artifacts from a Nexus repository
+
+When building a docker image, the docker project directory is uploaded to the Docker daemon. Stackwork makes sure your artifacts are 
+available for the build, in the `build/stackwork-deps/` directory. 
+
+~~~ groovy
+// build.gradle
+
+dependencies {
+  // dependencies for image builds use the stackwork configuration:
+  stackwork group: 'GROUP', name: 'NAME', version: 'VERSION'
+}
+~~~
+
+~~~
+# Dockerfile
+
+FROM scratch
+COPY build/stackwork-deps/NAME-VERSION.ext /
+~~~
 
 ## Use artifacts from your build
 
 Often, a project produces an artifact that should be copied into the final Docker image.
 In such a case, simply make sure that the `buildImage` tasks depends on the gradle tasks that produce the artifact by configuring this in
-the build file. Then, the Dockerfile can refer to that artifact.  
-
-## Use artifacts from a Nexus repository
-
-...
+the build file. Note that the artifact must be in the same directory as the Dockerfile, or a subdirectory of that.
