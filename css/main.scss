@@ -1,6 +1,7 @@
 ---
 ---
 
+@import 'colorscheme';
 @import 'menu';
 @import 'pygments-colorful';
 
@@ -65,7 +66,7 @@ a.sitemap-link, a.sitemap-link:active, a.sitemap-link:hover, a.sitemap-link:visi
 h2 { margin-top: 2em; }
 
 a, a:active, a:hover, a:visited {
-    color: #666;
+    color: $action-dark-color;
     font-weight: bold;
     text-decoration: none;
 }
