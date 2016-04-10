@@ -9,7 +9,7 @@ The project and all subprojects that function as Stackwork modules should contai
 
 // in the main project. Not needed in subprojects
 plugins {
-  id 'org.stackwork' version '0.6.0-rc.6'
+  id 'org.stackwork' version '0.6.0'
 }
 
 // in subprojects. Not needed in the main project
