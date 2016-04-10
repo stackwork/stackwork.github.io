@@ -23,7 +23,8 @@ The [Gradle tasks](/reference/gradle-tasks/) of interest are:
 - tagImage
 - pushImage
 
-These tasks are logically dependent, so `gradle pushImage` will run all three. See the [reference](/reference/tasks/) for the task details.
+These tasks are respectively dependent, so `gradle pushImage` will run all three.
+See the [reference](/reference/gradle-tasks/) for the task details.
 
 The `imageName` will be tagged with the `version`. Our own practice is to use the 
 [nebula release plugin](https://github.com/nebula-plugins/nebula-release-plugin) to generate the version automatically.
