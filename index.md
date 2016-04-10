@@ -45,3 +45,7 @@ So if an image is meant to be extended, you can test that.
 
 The plugin executes commands to the Docker CLI and Docker Compose, meaning those are prerequisites.
 It also means out of the box support for the Linux socket, and any tweaking such as an --insecure-registry will be used automatically.
+
+## Documentation, source code and contributions
+Currently, all information present on the Github project page [stackwork](http://github.com/stackwork/stackwork)
+is being migrated here. While this is in process, you may find information there that is not here yet.
