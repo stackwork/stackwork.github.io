@@ -1,6 +1,9 @@
 - title: Stackwork
   url: /
 
+- title: Getting started
+  url: /getting-started/
+
 - title: Usage
   pages:
   - title: Build & publish
@@ -11,7 +14,6 @@
     url: /usage/tests-in-code/
 
 - title: Reference
-#  url: /reference/
   pages:
   - title: Build file
     url: /reference/build-file/
