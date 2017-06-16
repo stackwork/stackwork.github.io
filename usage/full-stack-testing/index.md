@@ -13,11 +13,12 @@ The simplest setup contains a module
 
 ~~~ groovy
 // mod/build.gradle
+import org.stackwork.gradle.docker.ModuleType
 
 apply plugin: 'stackwork'
 
 stackwork {
-  moduleType = ('TEST'|'TEST_IMAGE') 
+  moduleType = (ModuleType.TEST | ModuleType.TEST_IMAGE) 
 }
 ~~~
 
